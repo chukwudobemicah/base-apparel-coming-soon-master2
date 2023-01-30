@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Micah's Frontend Mentor solution | Base Apparel coming soon page</title>
+</head>
+
+<body>
+  <main>
+    <p><img class="logo" src="./images/logo.svg" alt="logo"></p>
+    <picture>
+      <source class="hero" media="(max-width:650px)" srcset="./images/hero-mobile.jpg" alt="hero image">
+      <source class="hero" media="(min-width:650px)" srcset="./images/hero-desktop.jpg">
+      <img class="hero" src="./images/hero-mobile.jpg" alt="">
+    </picture>
+    <div class="content">
+      <h1>
+        <span style="--order: 1" class="special-text">We're </span> <span style="--order: 2" class="special-text">
+          coming</span><span style="--order: 3" class="special-text">
+          soon</span>
+      </h1>
+      <p>
+        Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+      <form novalidate>
+        <input type="email" autocomplete="on" placeholder="Email Address">
+        <button type="submit"><img src="./images/icon-arrow.svg" alt=""></button>
+        <label class="error-message hidden" for="error">Please provide a valid email.</label>
+      </form>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
