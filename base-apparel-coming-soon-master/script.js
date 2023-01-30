@@ -11,18 +11,24 @@ const clearErrorMessage = function () {
   return (errorMessage.textContent = '');
 };
 const addValidMessage = function () {
+  clearErrorMessage();
   errorMessage.textContent = 'Email accepted!';
   errorMessage.style.color = 'green';
 };
+const addErrorMessage = function () {
+  clearErrorMessage();
+  errorMessage.textContent = 'Please provide a valid email';
+  errorMessage.style.color = 'red';
+};
 const checkEmail = function (email) {
   if (email === '' || !validateEmail(email)) {
-    console.log(email);
     errorMessage.classList.remove('hidden');
-    input.classList.add('input-error');
+    addErrorMessage();
+    input.classList.toggle('input-error');
   } else {
     errorMessage.classList.remove('hidden');
-    clearErrorMessage();
     addValidMessage();
+    input.classList.remove('input-error');
   }
 };
 
@@ -32,3 +38,4 @@ form.addEventListener('submit', function (e) {
   console.log(email);
   checkEmail(email);
 });
+// test email : john@gmail.com
